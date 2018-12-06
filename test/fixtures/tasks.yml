@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  description: MyString
+  title: TaskHubを作る
+  description: 作るぞ〜
   user_id: 1
   label_id: 1
   folder_id: 1
   due_day: 2018-12-06
 
 two:
-  title: MyString
-  description: MyString
+  title: 試験勉強をする
+  description: しません
   user_id: 1
-  label_id: 1
-  folder_id: 1
-  due_day: 2018-12-06
+  label_id: 10
+  folder_id: 10
+  due_day: 2019-12-06
