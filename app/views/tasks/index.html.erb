@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>User</th>
+      <th>Label</th>
+      <th>Due_date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <th><%= link_to task.title, task %></th>
+        <th><%= task.user_id %></th>
+        <th><%= task.label_id %></th>
+        <th><%= task.due_day %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "New Task", new_task_url %>
