@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   def index
+    current_user
     @tasks = Task.all
   end
   def show
