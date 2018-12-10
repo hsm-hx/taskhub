@@ -6,7 +6,7 @@ class LoginsController < ApplicationController
   def create
     user = User.find_by(user_id: params[:user_id])
 
-    if user #and user.authenticate(params[:pass])
+    if user and user.authenticate(params[:pass])
       session[:user_id] = user.id
       redirect_to tasks_url
     else 
