@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :current_user
+
   def index
     @tasks = Task.all
   end
