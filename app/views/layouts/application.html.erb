@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <header>
+      <% if @current_user != nil %>
+        <p><%= @current_user %>さん、ようこそ</p>
+      <% elsif %>
+        <%= link_to "ログイン", login_url %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
