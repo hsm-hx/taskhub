@@ -1,6 +1,10 @@
 <h1>Editing User</h1>
 
-<%= render 'form', user: @user %>
+<% if @current_user == @user %>
+  <%= render 'form', user: @user %>
+<% elsif %>
+  <p>このユーザの情報を編集する権限がありません。</p>
+<% end %>
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
