@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :tasks
   resources :comments
   resource :login
-  delete "login/destroy" => "logins#destroy"
+  delete "/login/destroy" => "logins#destroy"
 end
