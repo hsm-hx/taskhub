@@ -6,6 +6,8 @@ class TasksController < ApplicationController
   end
   def show
     set_task
+    @comment = Comment.new
+    @comments = Comment.where("task_id = ?", @task.id)
   end
   def new
     @task = Task.new
