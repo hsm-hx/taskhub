@@ -27,6 +27,16 @@
 
 <br>
 
+<div id="comments">
+  <% @comments.each do |task| %>
+    <p>
+      <strong><%= User.find(task.user_id).user_name %></strong>
+      <%= task.body %>
+    </p>
+  <% end %>
+  <%= render "comment", comment: @comment, task: @task %>
+</div>
+
 <% if @task.user_id == @current_user.id %>
 <%= link_to "Delete", @task, method: :delete, data: {confirm: "本当に削除しますか？"} %>
 <br>
