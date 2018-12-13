@@ -16,7 +16,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <th><%= link_to task.title, task %></th>
-        <th><%= task.user_id %></th>
+        <th><%= User.find(task.user_id).user_name %></th> 
         <th><%= task.label_id %></th>
         <th><%= task.due_day %></th>
       </tr>
