@@ -20,8 +20,6 @@
         <td><%= user.user_id %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +27,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<% if @current_user == nil %>
+  <%= link_to 'New User', new_user_path %>
+<% end %>
