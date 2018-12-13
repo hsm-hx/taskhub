@@ -1,4 +1,9 @@
 <h1>New Task</h1>
-<%= render "form", task: @task %>
+
+<% if @current_user != nil %>
+  <%= render "form", task: @task %>
+<% elsif %>
+  <p>権限がありません。ログインしてください</p>
+<% end %>
 
 <%= link_to "Back", tasks_url %>
