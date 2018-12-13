@@ -7,7 +7,6 @@
     <tr>
       <th>Title</th>
       <th>User</th>
-      <th>Label</th>
       <th>Due_date</th>
     </tr>
   </thead>
@@ -17,7 +16,6 @@
       <tr>
         <th><%= link_to task.title, task %></th>
         <th><%= User.find(task.user_id).user_name %></th> 
-        <th><%= task.label_id %></th>
         <th><%= task.due_day %></th>
       </tr>
     <% end %>
@@ -26,4 +24,6 @@
 
 <br>
 
-<%= link_to "New Task", new_task_url %>
+<% if @current_user != nil %>
+  <%= link_to "New Task", new_task_url %>
+<% end %>
