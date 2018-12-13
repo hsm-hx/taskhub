@@ -19,9 +19,21 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    set_comment
+    @comment.destroy
+
+    respond_to do |format|
+      format.html{
+        redirect_to tasks_url,
+        notice: "Comment was successfully deleted."
+      }
+    end
+  end
+
   private
   def set_comment
-    @comment = Comment.new
+    @comment = Comment.find(params[:id])
   end
   def comment_params
     params.require(:comment).permit(:body, :task_id)
