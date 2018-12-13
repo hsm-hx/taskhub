@@ -14,7 +14,7 @@
       <% if @current_user != nil %> 
         <p><%= @current_user.user_name %>さん、ようこそ</p>
         <p>
-          <%= link_to "ログアウト", controller: :logins, action: :destroy, data: {confirm: "ログアウトしますか？"} %>
+          <%= link_to "ログアウト", "login/destroy", method: :delete %>
         </p>
       <% elsif %>
         <%= link_to "ログイン", login_url %>
